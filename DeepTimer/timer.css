@@ -1,0 +1,31 @@
+h1{
+    color:blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4em;
+}
+
+#hours, #minutes, #seconds {
+    width: 100px;
+}
+#millisecond{
+    display:none;
+}
+
+.form_main{
+    padding:20px 10px 0px;
+    font-size: 2em;
+}
+button{
+    margin:0px 5px;
+}
+form{
+    position:relative;
+}
+.buttonclass{
+    width:55%;
+    margin:20px 0px 0px;
+}
+.entry_form_labels{
+    padding:0px 5px 0px 10px;
+    font-weight:bold;
+}
