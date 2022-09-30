@@ -1,0 +1,138 @@
+body{
+    /* display:inline-block; */
+    margin:0px;
+    padding:0px;
+    max-width:100%;
+    overflow-x: hidden;
+}
+
+.header{
+    background-color: #F1EFED;
+    width:100%;
+    height:10%;
+    margin: auto;
+    padding:0px 20px;
+}
+.hrbar{
+    background-color: black;
+    width:100%;
+    height:100px;
+    padding:0px 20px;
+}
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:2.5em;
+    color:white;
+    position:relative;
+    top:25%;
+    padding:0;
+    margin:0;
+}
+.grid{
+    width:100%;
+    height:auto;
+}
+.boxgroup1{
+    display: inline-block;
+    width: 40%;
+    height:400px;
+    /* float: left; */
+    padding:10px;
+    margin:30px;
+    /* background-color: blue; */
+    /* border: solid 1px black; */
+
+}
+.boxgroup2{
+    width: 40%;
+    height:400px;
+    float: right;
+    padding:10px;
+    margin:30px;
+    /* background-color: blue; */
+    /* border: solid 1px black; */
+
+}
+#bg1box1, #bg2box1{
+    width: 30%;
+    height:100px;
+    padding:0px 10px 10px;
+    margin:0px 30px 50px;
+    background-color: #F1EFED;
+    /* border: solid 1px black; */
+    border-radius: 10px;
+    box-shadow: inset;
+    float: left;
+}
+#bg1box2, #bg2box2{
+    width: 30%;
+    height:100px;
+    padding:0px 10px 10px;
+    margin:0px 30px 50px;
+    background-color: #F1EFED;
+    /* border: solid 1px black; */
+    border-radius: 10px;
+    box-shadow: inset;
+    float: right;
+}
+#bg1box3{
+    clear:both;
+    background-image: url('RevenueDelayed.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height:80%;
+    width:80%;
+    margin:auto;
+}
+
+#bg2box3{
+    clear:both;
+    background-image: url('NoofOrdersDelayed.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height:75%;
+    width:75%;
+    margin:auto;
+}
+
+
+.pheader{
+    font-weight: bold;
+    /* font-size: 1.25em; */
+    text-align: left;
+}
+.pline{
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.pperc{
+    font-weight: bold;
+    font-size: 0.70em;
+    text-align: right;
+    color:#C74634;
+    position:relative;
+    top: -20%
+}
+
+.boximg{
+    height:10px;
+    width:100%;
+    position:relative;
+    top: -5px;
+}
+.boximgalt{
+    height:10px;
+    width:75%;
+    margin:auto;
+    position:relative;
+    left:75px;
+}
+.boximgalt1{
+    height:10px;
+    width:75%;
+    margin:auto;
+    position:relative;
+    left:70px;
+}
