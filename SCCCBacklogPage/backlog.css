@@ -83,6 +83,8 @@ h1{
     height:80%;
     width:80%;
     margin:auto;
+    position:relative;
+    top: -10px;
 }
 
 #bg2box3{
@@ -93,6 +95,8 @@ h1{
     height:75%;
     width:75%;
     margin:auto;
+    position:relative;
+    top: -10px;
 }
 
 
@@ -124,10 +128,11 @@ h1{
 }
 .boximgalt{
     height:10px;
-    width:75%;
+    width:70%;
     margin:auto;
     position:relative;
-    left:75px;
+    left:85px;
+    z-index: 10;
 }
 .boximgalt1{
     height:10px;
@@ -135,4 +140,11 @@ h1{
     margin:auto;
     position:relative;
     left:70px;
+    z-index: 10;
+}
+
+#org{
+    font-weight: bold;
+    padding:10px;
+    font-size: 1.25em;
 }
