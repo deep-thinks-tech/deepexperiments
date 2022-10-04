@@ -1,0 +1,89 @@
+:root {
+    /* Color variables */
+    --white: white;
+    --aqua: aqua;
+    --black: black;
+    --grey: rgb(54, 15, 15);
+
+   
+    /* Font Properties */
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Border Properties */
+    --borderradius: 10px;
+
+    /* Margin Properties */
+    --margin: 0px;
+  }
+html{
+    height:100%;
+    font-family: var(--font);
+}
+body{
+    margin:var(--margin);
+    height:inherit;
+}
+.nav-center{
+    background-color: var(--grey);
+    padding:10px;
+    margin: 0px 0px 40px 0px;
+    
+}
+ul{
+    margin:var(--margin);
+    padding-right: 20px;
+    float:right;
+    position:relative;
+    top: -25px;
+}
+li{
+    display:inline-block;
+    /* Color for | */
+    color: var(--aqua);
+}
+h4{
+    margin: var(--margin);
+    padding-left: 20px;
+    font-size: 1.25em;
+    /* Color for text */
+    color: var(--aqua);
+}
+a{
+    color: var(--aqua);  
+    text-decoration: none;
+}
+
+.container{
+    margin: auto;
+    height:50%;
+    background-color: var(--black);
+    width:80%;
+    border-radius: var(--borderradius);
+    text-align: center;
+}
+h2{
+    margin:auto;
+    text-align: center;
+    font-size:4em;
+    position:relative;
+    top:20%;
+    color: var(--white)
+}
+
+.btn{
+    margin:auto;
+    width: 10%;
+    height: auto;
+    padding:10px 0px;
+    background-color: transparent;
+    border: 1px solid var(--white);
+    border-radius: var(--borderradius);
+    color: var(--white);
+    position:relative;
+    top:50%;
+ 
+}
+
+.btn:active, .btn:hover{
+    cursor: pointer;
+}
