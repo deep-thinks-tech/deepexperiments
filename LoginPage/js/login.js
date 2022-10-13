@@ -1,3 +1,1 @@
-function clickHandle(){
-    window.alert("Helloooooo There!!!!!")
-}
+const clickHandle = () =>  window.alert("Helloooooo There!!!!!");

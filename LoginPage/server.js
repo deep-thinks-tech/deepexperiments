@@ -5,28 +5,16 @@ let html;
 let css;
 let js;
 
-fs.readFile('./login.html', function(err,data){
-    if (err){
-        throw err;
-    }else{
-        html = data;
-    }
+fs.readFile('./login.html', (err,data) => {
+    err ? err : html = data;
 });
 
-fs.readFile('./css/login.css', function(err, data){
-    if (err){
-        throw err;
-    }else{
-        css = data;
-    }
+fs.readFile('./css/login.css', (err, data) => {
+    err ? err : css = data;
 });
 
-fs.readFile('./js/login.js', function(err, data){
-    if (err){
-        throw err;
-    }else {
-        js = data;
-    }
+fs.readFile('./js/login.js', (err, data) => {
+    err ? err : js = data;
 });
 
 //Create server
