@@ -40,7 +40,7 @@ http.createServer((req, res) => {
         return;
     }
     
-    if (req.url.indexOf('.js') != -1){
+    if (req.url.indexOf('/js/login.js') != -1){
         res.writeHead(200, {'Content-Type': 'text/js'});
         res.write(js);
         res.end();
