@@ -1,5 +1,6 @@
 const http = require('http');
 const fs = require('fs');
+const createserver = require("./createserver.js")
 
 let html;
 let css;
@@ -19,25 +20,7 @@ fs.readFile('./js/login.js', (err, data) => {
 
 //Create server
 http.createServer((req, res) => {
-    res.statusCode = 200;
-
-    if (req.url.indexOf('.css') != -1){
-        res.writeHead(200, {'Content-Type': 'text/css'});
-        res.write(css);
-        res.end();
-        return;
-    }
-    
-    if (req.url.indexOf('/js/login.js') != -1){
-        res.writeHead(200, {'Content-Type': 'text/js'});
-        res.write(js);
-        res.end();
-        return;
-    }
-
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(html);
-    res.end();
+    createserver(req, res, html, css, js);
 }).listen(8080);
 
 console.log('Server listening on port 8080. Open http://localhost:8080/')
