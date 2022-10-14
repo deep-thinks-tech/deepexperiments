@@ -6,4 +6,4 @@
     - In server.js, use the path of the module and not just the file name. 
         - For instance, **require("./createserver")** and not **require("createserver")**
     - In module file (in my case createserver.js), syntax has to be
-        - **module.exports = function(<var>){}
+        - **module.exports = function(...){}**
