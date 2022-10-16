@@ -1,10 +1,16 @@
+:root{
+    --color1: linear-gradient(60deg, rgb(224, 104, 124), rgb(59, 59, 181));
+    --color2: linear-gradient(60deg, orange, rgb(222, 86, 86));
+    --color3: rgba(235, 77, 14, 0.8);
+    --color4: rgb(234, 24, 59);
+}
 html{
     width: 100%;
     height: 100%;
 }
 
 body{
-    background: linear-gradient(to right, rgb(224, 104, 124), rgb(59, 59, 181));
+    background: var(--color1);
     background-repeat: no-repeat;
     background-size: cover;
     font-family:Roboto;
@@ -17,9 +23,49 @@ body{
    justify-content: center;
 }
 #textcontainer{
+    width:70%;
+    border:0;
     position: relative;
     transform: translateY(60%);
-    border: solid 2px black;
-    border-radius: 20px;
-    padding:30px 100px;
+    /* border: solid 2px black; */
+    box-shadow: 3px 3px 10px var(--color3);
+    border-radius: 10px;
+    padding:30px 30px;
+    text-align: center;
+    background: var(--color2);
+    color: var(--color4);
+}
+h1{
+    margin:0;
+}
+h4, #un, #pw{
+    margin:5px;
+}
+#signinbox{
+    padding:3px;
+    text-align: center;
+    width:100%;
+}
+
+#btn{
+    background-color: var(--color4);
+    padding:10px;
+    font-family: Roboto;
+    font-size: 1.05em;
+    /* color: var(--color2); */
+    border-radius: 10px;
+    width: 50%;
+    border: transparent;
+    box-shadow: 3px 3px 10px var(--color3);
+    margin: 2px 0px;
+    transition-duration: 0.4s;
+}
+
+#btn:hover{
+    cursor: pointer;
+    background-color: transparent;
+    border: solid 1px var(--color4)
+}
+input{
+    width: 50%;
 }
