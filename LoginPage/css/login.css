@@ -91,5 +91,8 @@ input[type=password]{
     .container, #textcontainer{
         width:100%;
     }
+    input{
+        width:100%;
+    }
     
 }
