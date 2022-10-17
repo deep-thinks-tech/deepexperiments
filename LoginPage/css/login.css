@@ -1,8 +1,9 @@
 :root{
     --color1: linear-gradient(60deg, rgb(224, 104, 124), rgb(59, 59, 181));
-    --color2: linear-gradient(60deg, orange, rgb(222, 86, 86));
+    --color2: linear-gradient(60deg, rgb(255, 165, 0), rgb(222, 86, 86));
     --color3: rgba(235, 77, 14, 0.8);
     --color4: rgb(234, 24, 59);
+    --color5: rgb(255, 165, 0, 0.8);
 }
 html{
     width: 100%;
@@ -14,16 +15,20 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     font-family:Roboto;
+    height: inherit;
 }
 
 .container{
     height:auto;
     width:100%;
+    height: inherit;
    display: flex;
    justify-content: center;
 }
+
 #textcontainer{
-    width:70%;
+    width:40%;
+    height: 40%;
     border:0;
     position: relative;
     transform: translateY(60%);
@@ -45,6 +50,9 @@ h4, #un, #pw{
     padding:3px;
     text-align: center;
     width:100%;
+    margin: 5% 0px;
+    line-height:3;
+
 }
 
 #btn{
@@ -54,7 +62,7 @@ h4, #un, #pw{
     font-size: 1.05em;
     /* color: var(--color2); */
     border-radius: 10px;
-    width: 50%;
+    width: 40%;
     border: transparent;
     box-shadow: 3px 3px 10px var(--color3);
     margin: 2px 0px;
@@ -68,4 +76,20 @@ h4, #un, #pw{
 }
 input{
     width: 50%;
+    padding: 1% 2%;
+}
+
+input:focus{
+    background-color: var(--color5);
+}
+input[type=password]{
+    position:relative;
+    left:0.9%;
+}
+
+@media screen and (max-width:  600px) {
+    .container, #textcontainer{
+        width:100%;
+    }
+    
 }
