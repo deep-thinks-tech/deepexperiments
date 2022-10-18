@@ -1,0 +1,19 @@
+{
+  "name": "counter",
+  "version": "1.0.0",
+  "description": "Simple Counter",
+  "main": "counter.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deep-thinks-tech/deepexperiments.git"
+  },
+  "author": "Deep-Thinks-Tech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deep-thinks-tech/deepexperiments/issues"
+  },
+  "homepage": "https://github.com/deep-thinks-tech/deepexperiments#readme"
+}
