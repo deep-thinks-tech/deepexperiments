@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node server.js"
   },
+  "nodemonConfig" : {
+    "ext" : "html, css, js, json"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/deep-thinks-tech/deepexperiments.git"

@@ -1,4 +1,42 @@
+:root{
+    --blue: rgb(173, 216, 230, 0.8);
+    --btnbrd: black;
+    --brdrd: 10px;
+}
 body{
     height:100%;
     width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    background-color: var(--blue);
+    border-radius: var(--brdrd);
+    padding:30px;
+    margin: auto;
+    width: 40%;
+    position: relative;
+    transform: translateY(60%);
+    text-align: center;
+}
+
+h1{
+    font-size: 3em;
+    margin:0;
+}
+
+.btn{
+    border: 1px var(--btnbrd) solid;
+    padding:10px;
+    border-radius: var(--brdrd);
+    text-transform: uppercase;
+    margin:10px 10px 10px 0;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+#value{
+    font-size: 4em;
+    font-weight: bold;
 }
