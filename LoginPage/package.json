@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "nodemonConfig" : {
+    "ext" : "html, css, js, json"
+  },
   "scripts": {
     "start": "node server.js"
   },
