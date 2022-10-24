@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Login</title>
+        <meta name = "viewport" content = "width = device-width initial-scale = 1.0"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+        <link rel = "stylesheet" type = "text/css" href = "./css/login.css"/>
+    </head>
+    <body>
+        <div class = "container">
+            <!-- textcontainer div is required to allow container div to center align without messing the content below -->
+            <div id = "textcontainer">
+                <h1>Sign In</h1>
+                <h4>to Continue</h4>
+                <div id = "signinbox">
+                    <label for = "un">User Name</label>
+                    <input type = "text" id = "un" name = "username" placeholder = "User Name or Email">
+                    <br>
+                    <label for = "pw">Password</label>
+                    <input type = "password" id = "pw" name = "password" placeholder = "Password">
+                </div>
+                <button id = "btn" onclick="clickHandle()">Sign In</button>
+            </div>
+        </div>
+        <script src = "./js/login.js"></script>
+    </body>
+</html>
