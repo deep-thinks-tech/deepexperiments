@@ -1,0 +1,16 @@
+/* Font Import */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+:root {
+    text-transform:capitalize;
+}
+
+h2{
+    font-family: Roboto;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 2em;
+}
+.underline{
+
+}
