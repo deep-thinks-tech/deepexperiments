@@ -3,6 +3,7 @@
 
 :root {
     text-transform:capitalize;
+    --color1: black;
 }
 
 h2{
@@ -12,5 +13,8 @@ h2{
     font-size: 2em;
 }
 .underline{
-
+    width: 10rem;
+    height: 0.25rem;
+   background: var(--color1);
+   margin:auto;
 }

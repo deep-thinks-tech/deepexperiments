@@ -1,3 +1,8 @@
+//get the button details
+const prevbtn = document.querySelector('.prevbutton');
+const nextbtn = document.querySelector('.nextbutton');
+const randbtn = document.querySelector('.randombutton');
+
 const personArray = [
     {
         id: 1,
@@ -54,5 +59,27 @@ const loadPerson = (personId) => {
 //Initial Load of page
 window.addEventListener('DOMContentLoaded',loadPerson(0));
 
+//Change User profiles on click on Previous Button
+const prevbtnclick = prevbtn.addEventListener('click', () => {
+  currentPerson--;
+  //Looping logic - if the index value goes below 0, then start from the last index
+  currentPerson = currentPerson < 0 ? personArray.length - 1 : currentPerson;
+  loadPerson(currentPerson);
+}); 
+
+//Change User profiles on click on Next Button
+const nxtbtnclick = nextbtn.addEventListener('click', () => {
+  currentPerson++;
+  //Looping logic - if the index value becomes equal to array length, then start from the first index
+  currentPerson = currentPerson === personArray.length ? 0 : currentPerson;
+  loadPerson(currentPerson);
+});
+
+//Randomize User profiles on click on Surprise Me button
+const randbtnclick = randbtn.addEventListener('click',() =>{
+  currentPerson = Math.floor(Math.random() * personArray.length);
+  console.log(currentPerson);
+  loadPerson(currentPerson);
+});
 
 
