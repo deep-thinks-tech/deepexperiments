@@ -1,7 +1,7 @@
 //get the button details
-const prevbtn = document.querySelector('.prevbutton');
-const nextbtn = document.querySelector('.nextbutton');
-const randbtn = document.querySelector('.randombutton');
+const prevbtn = document.querySelector('.prev-btn');
+const nextbtn = document.querySelector('.next-btn');
+const randbtn = document.querySelector('.random-btn');
 
 const personArray = [
     {
@@ -38,15 +38,15 @@ const personArray = [
         img:
           "https://robohash.org/robo3",
         text:
-          "I get the job done. ",
+          "I get the job done. Call me or text me for gaining insights into how to be a boss!",
       }
 ]
 
 let currentPerson = 0;
-let img = document.getElementById('img_id') ;
+let img = document.getElementById('person-img') ;
 let author = document.getElementById('author');
 let job = document.getElementById('job') 
-let about = document.getElementById('aboutme');
+let about = document.getElementById('info');
 
 //Initialize function
 const loadPerson = (personId) => {
