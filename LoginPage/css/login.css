@@ -8,6 +8,8 @@
 html{
     width: 100%;
     height: 100%;
+    
+    
 }
 
 body{
@@ -15,13 +17,13 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     font-family:Roboto;
-    height: inherit;
+    height: 100%;
+    margin:0;
+    
 }
 
 .container{
-    height:auto;
     width:100%;
-    height: inherit;
    display: flex;
    justify-content: center;
 }

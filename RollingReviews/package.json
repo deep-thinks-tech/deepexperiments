@@ -1,19 +1,19 @@
 {
-  "name": "loginpage",
+  "name": "rollingreviews",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "nodemonConfig" : {
-    "ext" : "html, css, js, json"
-  },
+  "description": "Rolling Reviews Code",
+  "main": "rollingreviews.js",
   "scripts": {
     "start": "node server.js"
+  },
+  "nodemonConfig" : {
+    "ext" : "html, css, js, json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/deep-thinks-tech/deepexperiments.git"
   },
-  "author": "Deep-Thinks-Tech",
+  "author": "Deep_Thinks_Tech",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/deep-thinks-tech/deepexperiments/issues"

@@ -23,4 +23,4 @@ http.createServer((req, res) => {
     createserver(req, res, html, css, js);
 }).listen(8080);
 
-console.log('Server listening on port 8080. Open http://localhost:8080/')
+console.log('Server listening on port 8080. Open http://localhost:8080/signup')

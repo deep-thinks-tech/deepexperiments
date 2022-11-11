@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const createserver = require('./createserver');
+const port = require("../env");
 
 let html;
 let css;
@@ -19,7 +20,8 @@ fs.readFile('./counter.html', (err, data) => {
 })
 
 //Create server
+const listenPort = port("counter");
 http.createServer((req, res) => {
     createserver(req, res, html, css, js);
-}).listen(8080);
-console.log('Server listening on port 8080. Open http://localhost:8080/counter.html')
+}).listen(listenPort);
+console.log("Server running on port "+listenPort+ ". Open http://localhost:"+listenPort+"/counter")
