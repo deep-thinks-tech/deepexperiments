@@ -1,0 +1,23 @@
+{
+  "name": "responsivenavbar",
+  "version": "1.0.0",
+  "description": "Responsive Navigation Bar",
+  "main": "responsivenavbar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "nodemonConfig" : {
+    "ext" : "html, css, js, json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deep-thinks-tech/deepexperiments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deep-thinks-tech/deepexperiments/issues"
+  },
+  "homepage": "https://github.com/deep-thinks-tech/deepexperiments#readme"
+}
