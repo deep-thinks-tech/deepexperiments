@@ -3,7 +3,7 @@ Loop Through each question
 If the button of a particular question is clicked, toggle .show-text class to the question
 If the question where the button was clicked is not same as the question being looped at that moment, remove .show-text class from the question
 */
-
+let startTime = performance.now();
 const questions = document.querySelectorAll('.question');
 
 questions.forEach((question) => {
@@ -18,3 +18,5 @@ questions.forEach((question) => {
    });
    });
 });
+let endTime = performance.now();
+console.log(endTime-startTime);
