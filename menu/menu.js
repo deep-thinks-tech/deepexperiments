@@ -92,7 +92,7 @@ btns.forEach((btn) => {
         const btnCat = b.currentTarget.id;
         console.log (btnCat);
         const menuItems = menu.filter((menuItem) => {
-            if (menuItem.category === btnCat){
+            if (menuItem.category === btnCat || btnCat === "all"){
                 console.log(menuItem.title + menuItem.category);
                 html1+= `<article class="menu-item">
                 <img src="${menuItem.img}" alt="${menuItem.title}" class="photo" />
@@ -106,7 +106,7 @@ btns.forEach((btn) => {
                 </p>
                 </div>
             </article>`
-            }
+            } 
         })
         page.innerHTML = html1;
     })
