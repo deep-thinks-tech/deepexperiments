@@ -29,13 +29,14 @@ function arrayIndex(value) {
     let smallerArray = [];
     let finalArray = [];
     for (j of smallerArrayLengths){
+        console.log(j);
         for (let k = 1; k<=j;k++){
-            console.log(j, k);
-            //smallerArray.push(k);
+            console.log(k);
+            smallerArray.push(k);
         }
-        //console.log(smallerArray);
+        console.log(smallerArray);
         finalArray.push(smallerArray);
     }
-   // console.log(finalArray);
+   console.log(finalArray);
 
 }
