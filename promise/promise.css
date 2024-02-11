@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+:root{
+    --font-color : blue;
+    --padding : 20px;
+    --font : "Roboto", sans-serif
+
+}
+#container{
+    width: 40%;
+    margin:auto;
+    padding: var(--padding);
+    font-family: var(--font);
+}
+
+form{
+    padding: var(--padding);
+    font-weight: bold;   
+}
+
+#labelid{
+    padding: 0 10px 0 0;
+}

@@ -1,0 +1,39 @@
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+:root{
+    --cell-border: 3px;
+    --border-color: blue;
+    --border-radius: 50%;
+    --cell-padding: 10px;
+    --cell-dimensions: 20px;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+}
+
+/* body{
+    width: 100%;
+    height:100%;
+} */
+
+table{
+    margin:auto;
+}
+
+td{
+    border-radius: var(--border-radius);
+    border: var(--cell-border) solid var(--border-color);
+    padding: var(--cell-padding);
+    width: var(--cell-dimensions);
+    height: var(--cell-dimensions);
+    text-align: center;
+    font-family: var(--ff-secondary)
+}
+
+td:hover{
+    cursor: pointer;
+}
+h1{
+    font-family: var(--ff-primary);
+    text-align: center;
+}
