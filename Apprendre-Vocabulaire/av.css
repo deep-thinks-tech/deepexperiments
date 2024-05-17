@@ -64,6 +64,7 @@
     font-size: 0.875rem;
     display: inline-block;
     position: relative;
+
   }
   *,
 ::after,
@@ -156,5 +157,6 @@ p {
   }
   p {
     position: relative;
-    left: 72%
+    left: 72%;
+    overflow-wrap: 10px;
   }
