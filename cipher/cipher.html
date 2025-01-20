@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Encryption</title>
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0"/>
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="cipher.css" />
+    </head>
+    <body>
+        <form>
+            <label for="ciphertype">Choose the Encryption</label>
+            <select id="ciphertype" name="ciphertype">
+              <option value="simplesub">Simple Substitution</option>
+                <!--   <option value="saab">Saab 95</option>
+                <option value="mercedes">Mercedes SLK</option>
+                <option value="audi">Audi TT</option> -->
+            </select>
+            <br>
+            <label for = "inval">Input Value</label>
+            <input type =  "text" id = "inval" name = "inputvalue"><br>
+            <label for = "keyval">Key</label>
+            <input type =  "text" id = "keyval" name = "keyvalue"><br>
+            <input type = "button" id = "encrypt" name = "encrypt" value = "Encrypt">
+        </form>
+        <p id = "out"></p>
+        <script src="cipher.js" type="text/javascript"></script>
+    </body>
+</html>
