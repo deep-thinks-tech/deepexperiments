@@ -22,7 +22,6 @@ function starthere(){
         let input = document.getElementById('inval').value;
         let key = document.getElementById('keyval').value;
         let validation = "Valid";
-        //let tempOutput = "Here is the input "+input+" and here is the  key "+key;
 
         //Remove whitespaces from key
         keyNoSpace = key.replaceAll(" ","");
@@ -38,7 +37,6 @@ function starthere(){
         inputcheck.map(function(i){
             if (i == "Not Found"){
                 validation = "Invalid";
-                console.log("Invalid Input");
                 document.getElementById("out").innerHTML = "Invalid Input";
             }
         })
@@ -46,7 +44,6 @@ function starthere(){
         keycheck.map(function(k){
             if (k == "Not Found"){
                 validation = "Invalid";
-                console.log("Invalid Key");
                 document.getElementById("out").innerHTML = "Invalid Key";
             }
         })
@@ -56,8 +53,14 @@ function starthere(){
 
             //Match the lengths of input and key arrays
             matchedKeyArray  = matcharraylen(inputArray, keyArray);
-            keyPositions = keyPosFun(matchedKeyArray);
-            console.log(keyPositions);
+
+            //Find the key positions
+            let keyPositions = keyPosFun(matchedKeyArray);
+
+            //Check the input in their respective arrays and advance them by key positions to create a new output array.
+            outputArray = encrypt(inputArray, keyPositions);
+            outputString = outputArray.join("");
+            document.getElementById("out").innerHTML = outputString;
     }
     }
     function matcharraylen(i, k){
@@ -92,22 +95,23 @@ function starthere(){
         return check;
     }
 
-    function keyPosFun(matchedKeyArray){
+    //Function to 1. Determine the position of the keys 2.Determine if the input value is an alphabet, number, or character
+    function keyPosFun(array){
 
         //Find the key positions
-        let keyPos = [];    
-        matchedKeyArray.map(function(key){
+        let keyPos = [];   
+        array.map(function(key){
             for (let i = 0; i < alphaArray.length; i++){
                 if(key.toLowerCase() == alphaArray[i]){
-                    if (i < 25){
+                    if (i < 26){
                         keyPos.push(i+1);
-                    } else if(i >= 25 && i <35){
+                    } else if(i >= 26 && i <36){
                         for (let j = 0; j < numArray.length; j++){
                             if (key == numArray[j]){
                                 keyPos.push(j+1);
                             }
                         }
-                    }else if (i >= 35){
+                    }else if (i >= 36){
                         for (let j = 0; j < charArray.length; j++){
                             if (key == charArray[j]){
                                 keyPos.push(j+1);
@@ -121,4 +125,63 @@ function starthere(){
             
         })
         return keyPos;
+    }
+
+    function encrypt(inputArray,keyPos){
+        let outputArray = [];
+        let inputPos = 0; //variable to store the position of the input array elements
+        let elementFound = "No"; // to determine if for loop was exited because the element was found or due to element not being found
+        let newPos = 0; //variable to calculate the position of the alphabet, number, or character that would be the substitution for the input element.
+        inputArray.map(i => {
+            newPos = 0;
+            for(j = 0; j< quertyArray.length; j++){
+                elementFound = "No"; 
+                if(i.toLowerCase() == quertyArray[j]){
+                    elementFound =  "Yes";
+                    newPos = j + keyPos[inputPos];
+                    if (newPos >=quertyArray.length){
+                        newPos = newPos - quertyArray.length;
+                    }   
+                    outputArray.push(quertyArray[newPos]);
+                    inputPos++;
+                    break;
+                }
+            }
+            if(elementFound == "No"){
+                for(j = 0; j<numArray.length;j++){
+                    elementFound == "No";
+                    if(i == numArray[j]){
+                        elementFound = "Yes";
+                        newPos = j + keyPos[inputPos];
+                        if (newPos >=numArray.length){
+                            while(newPos >=numArray.length){
+                                newPos = newPos - numArray.length;
+                            }
+                        }
+                        outputArray.push(numArray[newPos]);
+                        inputPos++;
+                        break;
+                    }
+                }
+            }
+            if(elementFound == "No"){
+                for(j = 0; j<charArray.length;j++){
+                    elementFound == "No";
+                    if(i == charArray[j]){
+                        elementFound = "Yes";
+                        newPos = j + keyPos[inputPos];
+                        if (newPos >=charArray.length){
+                            while(newPos >=charArray.length){
+                                newPos = newPos - charArray.length;
+                            }
+                            
+                        }
+                        outputArray.push(charArray[newPos]);
+                        inputPos++;
+                        break;
+                    }
+                }
+            }
+        })
+        return outputArray;
     }
