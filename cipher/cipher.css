@@ -1,0 +1,14 @@
+:root{
+    --clr-green-dark: hsl(125, 67%, 44%);
+}
+h1{
+    position: relative;
+    left: 40%;
+    padding-top: 5%;
+}
+
+p {
+    font-size: 4rem;
+    color: var(--clr-green-dark);
+    overflow-wrap: 10px;
+  }
