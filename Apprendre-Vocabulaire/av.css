@@ -42,7 +42,7 @@
     --fixed-width: 620px;
   }
 
-.container {
+.container1 {
     width: 100%;
     height: 90%;
     position: relative;
@@ -157,3 +157,7 @@ p {
     color: var(--clr-white);
     background: var(--clr-black);
   }
+
+  .container {
+    max-width: 960px;
+  } 
