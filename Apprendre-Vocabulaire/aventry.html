@@ -21,13 +21,17 @@
                               <input type="text" class="form-control" id = "word" placeholder="Word">
                               <input type="text" class="form-control" id = "meaning" placeholder="Meaning">
                             </div>
-                            <button type="submit" class="btn btn-secondary"  id = "newbtn">Submit</button>
                           </form>
+                          <br>
+                          <!--Putting button inside the form was refreshing the JS. Both console.log and output to be displayed for a fleeting moment before vanishing. Once moved outside,the button size reduced. Added card p-0 div class to get borderless button of the same size as top text-->
+                          <div class = "card p-0">
+                          <button type="submit" class="btn btn-secondary"  id = "newbtn">Submit</button>
+                        </div>
                     </div>
                 </div>
                 <br>    
                 <div class = "col-12">
-                    <p id="outword" class= "text-body-secondary">Hello</p><br>
+                    <p id="outword" class= "text-body-secondary text-center"></p>
                 </div> 
                 <div class = "py-5 text-center">
                     <h2>Guess The Word</h2>
@@ -37,9 +41,9 @@
                     <div class = "order-md-last card p-2">            
                         <button id = "btn1" class="btn btn-secondary" onclick="newQ()">Generate a Random Meaning</button>
                         <br>
-                        <p id = "q" class= "text-body-secondary"></p>
+                        <p id = "q" class= "text-body-secondary text-center"></p>
                         <button id="btn2" class="btn btn-secondary">Reveal The Word</button>
-                        <p id="out" class= "text-body-secondary"></p>
+                        <p id="out" class= "text-body-secondary  text-center"></p>
                     </div>
                 </div>
             </main>
