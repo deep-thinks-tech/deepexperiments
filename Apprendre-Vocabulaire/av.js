@@ -9,7 +9,8 @@ let meaning = ["formal and humorous way of saying the act of washing", "scrape o
 let savedWords = JSON.parse(localStorage.getItem(storageKey1));
 let savedMeanings = JSON.parse(localStorage.getItem(storageKey2));
 let wordArray = [];
-let meaningArray = [];  
+let meaningArray = []; 
+let combinedwordArray = []; 
 if(savedWords){
     wordArray = savedWords;
     meaningArray = savedMeanings;
@@ -55,8 +56,9 @@ btnA.addEventListener("click",() => {
         wordArray = savedWords;
         meaningArray = savedMeanings;
     }
-      for (k = 0; k<wordArray.length; k++){
-        if (newword.toLowerCase()  == wordArray[k].toLowerCase()){
+    combinedwordArray = word.concat(wordArray);
+      for (k = 0; k<combinedwordArray.length; k++){
+        if (newword.toLowerCase()  == combinedwordArray[k].toLowerCase()){
           document.getElementById("outword").innerHTML = "Word "+newword+ " already exists.";
           exists = 1;
         }
