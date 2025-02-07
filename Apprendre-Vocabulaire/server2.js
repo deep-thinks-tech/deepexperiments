@@ -22,4 +22,4 @@ http.createServer((req, res) => {
     createserver(req, res, html, css, js);
 }).listen(listenPort);
 
-console.log("Server running on port "+listenPort+ ". Open http://localhost:"+listenPort+"/newword   ")
+console.log("Server running on port "+listenPort+ ". Open http://localhost:"+listenPort+"/guessword   ")
