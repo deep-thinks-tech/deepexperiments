@@ -16,7 +16,6 @@ async function readGoogleSheet() {
     const data = await response.json();
 
     console.log("Sheet Data:", data.values);
-//https://sheets.googleapis.com/v4/spreadsheets/1zvz1L02cRm6-KbVGz79OwwKT44XTc5gaSFX8QBIJoME/values/Sheet1!A1:C10?key=AIzaSyAG9E0Q5BQtBDjsteLCBruQuhOaucv5oKs
 }
 
 readGoogleSheet();
