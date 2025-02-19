@@ -2,7 +2,7 @@ let btn = document.getElementById('submitbtn');
 btn.addEventListener('click', () => {
     const SHEET_ID = document.getElementById('sheet_id').value; // Your Google Sheet ID
     const API_KEY = document.getElementById('api_key').value; // Your API Key
-    const RANGE = "Sheet1!A1:C10"; // Adjust range as needed
+    const RANGE = "Sheet1!A1:C30"; // Adjust range as needed
 
 
 
