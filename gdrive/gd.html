@@ -12,6 +12,7 @@
                 <div>
                     <input type="text" id = "sheet_id" placeholder="Sheet ID...">
                     <input type="text" id = "api_key" placeholder="API Key...">
+                    <input type = "text" id = "passkey" placeholder="Pass Key...">
                 </div>
             </form>
             <div class = "card p-0">
@@ -21,8 +22,14 @@
             <form class="card p-2">
                 <div>
                     <input type="text" id = "dep_url" placeholder="Deployment URL...">
-                    <input type="text" id = "type" placeholder="Type...">
-                    <input type="text" id = "features" placeholder="Feature...">
+                    <input type="date" id = "date" placeholder="Transaction Date...">
+                    <label for="transtype" class="form-label">Choose the Encryption</label>
+                    <select class="form-select" id="transtype" name="transtype">
+                    <option value="simplesub">Simple Substitution</option>
+                        <option value="saab">Saab 95</option>
+                        <option value="mercedes">Mercedes SLK</option>
+                        <option value="audi">Audi TT</option> 
+                    </select>
                 </div>
             </form>
             <div class = "card p-0">
