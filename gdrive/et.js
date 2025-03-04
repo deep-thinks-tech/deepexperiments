@@ -24,14 +24,12 @@ readGoogleSheet();
 
 async function writeGoogleSheet() {
     let GOOGLE_SCRIPT_URL_P2 = document.getElementById('dep_url').value;
-    console.log(GOOGLE_SCRIPT_URL_P2)
     const date = document.getElementById('date').value;
     const transtype = document.getElementById('transtype').value;
     const amount = document.getElementById('amount').value;
     const paytype = document.getElementById('paytype').value;
     const comments = document.getElementById('comment').value;
     let GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbykFTu-6xkFuw1N4D0iIXL-H8Cir8_050IjMd5t8tapGARGLRFv6uza4oNDUswyJQb"+GOOGLE_SCRIPT_URL_P2+"/exec" 
-    console.log(GOOGLE_SCRIPT_URL)
  
 
     const data = {
