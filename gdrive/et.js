@@ -23,6 +23,7 @@ readGoogleSheet();
 
 
 async function writeGoogleSheet() {
+    document.getElementById("outmsg").innerHTML = "Waiting...";
     let GOOGLE_SCRIPT_URL_P2 = document.getElementById('dep_url').value;
     const date = document.getElementById('date').value;
     const transtype = document.getElementById('transtype').value;
