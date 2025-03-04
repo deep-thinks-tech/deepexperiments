@@ -23,14 +23,22 @@ readGoogleSheet();
 
 
 async function writeGoogleSheet() {
-    const GOOGLE_SCRIPT_URL = document.getElementById('dep_url').value;
-    const type = document.getElementById('type').value;
-    const feature = document.getElementById('features').value;
+    let GOOGLE_SCRIPT_URL_P2 = document.getElementById('dep_url').value;
+    const date = document.getElementById('date').value;
+    const transtype = document.getElementById('transtype').value;
+    const amount = document.getElementById('amount').value;
+    const paytype = document.getElementById('paytype').value;
+    const comments = document.getElementById('comment').value;
+    let GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbykFTu-6xkFuw1N4D0iIXL-H8Cir8_050IjMd5t8tapGARGLRFv6uza4oNDUswyJQb"+GOOGLE_SCRIPT_URL_P2+"/exec" 
+ 
+
     const data = {
-        Type: type,
-        Features: feature
+        Date: date,
+        Description: transtype,
+        Amount: amount,
+        PaymentMethod: paytype,
+        Comments: comments
     };
-    try{
 
     const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
@@ -38,13 +46,6 @@ async function writeGoogleSheet() {
         body: JSON.stringify(data),
         mode: "no-cors"  // ✅ Fixes CORS issue
     });
-    const result = await response.text();
-    //if (result  == "Success"){
-        console.log(result);
-    //} else{
-        //throw new Error("Write Failed");
-    //}
-} catch(error){
-    console.log("Error:", error.message)
-}
+    await response.text();
+    document.getElementById("outmsg").innerHTML = "Data Saved Successfully";
 }
