@@ -47,11 +47,22 @@ async function readGoogleSheet() {
     let ak1 = '8FwXPv8D6B7N2';
     let ak2 = '9Nq9AgpqbI09o';
     let ak3 = 'rNreLXrZs2lHp';
-    
-    let arr = [8,9,0,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',1,2,3,4,5,6,7];
+
+    let origarr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',1,2,3,4,5,6,7,8,9,0];
+
     let ak = ak1+ak2+ak3;
     let akarr = ak.split(""); //Encrypted key array
     let keyval = GOOGLE_SCRIPT_URL_P21.charAt(GOOGLE_SCRIPT_URL_P21.length-1) //Key - last character of the Deployment  URLs
+
+    //Dynamically create comparison array
+    let arr = [];
+    for (let c = parseInt(keyval); c > 0; c--){
+        arr.push(origarr[origarr.length-c])
+    }
+    
+    for (let b = 0; b < origarr.length-parseInt(keyval); b++){
+        arr.push(origarr[b]);
+    }
 
     let decryptarr = [];
     let dk;
