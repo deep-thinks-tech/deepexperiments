@@ -13,8 +13,12 @@ async function writeGoogleSheet(){
         mode: "no-cors"  // ✅ Fixes CORS issue
     });
 
-    const result = await response.json();
-    console.log(typeof(result))
-    console.log(result);
+    //const result = 
+    await response.text();
+    //console.log(typeof(result))
+    //console.log(result);
+    document.getElementById("outmsg").innerHTML = "Done";
 }
+
+//Check https://www.youtube.com/watch?v=N3vnUgjQCGU&pp=ygUPI3N3aW5nYXBwc2NyaXB0
 
