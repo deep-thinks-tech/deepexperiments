@@ -1,5 +1,6 @@
 async function writeGoogleSheet(){
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxfl3iLgHpFhtAXE6YFiv1Nq7RQkiNnH4MNmPns-la0vrJ8SIcLpqwlr5jTVE3eUw-Olw/exec";
+    document.getElementById("outmsg").innerHTML = "";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxpgQURreCaIk0MIqPWLqRCfT4b2hk3BH1WuABalBqNf4irGCmwkzjjjnKo8MlKQ5gNtQ/exec";
 
 
     const data = {
@@ -14,9 +15,10 @@ async function writeGoogleSheet(){
     });
 
     //const result = 
-    await response.text();
-    //console.log(typeof(result))
-    //console.log(result);
+    
+    const result = await response.text();
+    console.log(typeof(result))
+    console.log(result);
     document.getElementById("outmsg").innerHTML = "Done";
 }
 
