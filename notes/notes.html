@@ -6,12 +6,18 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      margin: 0;
+      padding: 0;
       background: #f4f4f4;
+      width: 100%;
+      min-height: 100vh;
+      
     }
+    
 
     h1 {
       color: #333;
+      justify-self: center; /* Align the heading to the center of the page*/
     }
 
     form {
@@ -21,9 +27,18 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       max-width: 400px;
       margin-bottom: 20px;
+      justify-self: center; /* Align the form to the center of the page*/
     }
 
     input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    select {
       width: 100%;
       padding: 10px;
       margin-top: 8px;
@@ -78,23 +93,60 @@
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  form {
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
   </style>
 </head>
 <body>
-  <h1>Jot Down Your Thoughts</h1>
+  
+    <h1>Jot Down Your Thoughts</h1>
+    
+    <form id="bookmarkForm">
+      <label for="title">Existing Title:</label>
+      <!--<input type="text" id="title" required>-->
+      <select id="title">
+        <option value="">-- Select Title --</option>
+      </select> 
+  <br>
+      <label for="newtitle">New Title:</label>
+      <input type="text" id="newtitle">
 
-  <form id="bookmarkForm">
-    <label for="title">Title:</label>
-    <input type="text" id="title" required>
+      <label for="notes">Notes:</label>
+    <textarea id="notes" rows="6" required></textarea>
 
-    <label for="notes">Notes:</label>
-  <textarea id="notes" rows="6" required></textarea>
+      <button type="submit">Submit</button>
+      <button type="button" onclick="fetchData()">Fetch Data</button>
+    </form>
 
-    <button type="submit">Submit</button>
-    <button type="button" onclick="fetchData()">Fetch Data</button>
-  </form>
-
-  <div id="dataDisplay"></div>
+    <div id="dataDisplay"></div>
+  
 
   <script src="notes.js"></script>
 </body>
