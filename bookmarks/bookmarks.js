@@ -16,10 +16,9 @@ async function writeGoogleSheet(){
 
     //const result = 
     
-    const result = await response.text();
-    console.log(typeof(result))
-    console.log(result);
+    await response.text();
     document.getElementById("outmsg").innerHTML = "Done";
+    document.getElementById("bookmarkForm").reset();
 }
 
 //Check https://www.youtube.com/watch?v=N3vnUgjQCGU&pp=ygUPI3N3aW5nYXBwc2NyaXB0
@@ -27,6 +26,7 @@ async function writeGoogleSheet(){
 
 async function fetchData() {
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwKw4mJsBEbnhsutl7EAn1fnmhz3d31aNEdxUEeQyduRi2QNW8Rz_CtwI9s53YvE9h9UA/exec";
+  document.getElementById("outmsg").innerHTML = "";
 
   try {
     const response = await fetch(GOOGLE_SCRIPT_URL); // GET by default
