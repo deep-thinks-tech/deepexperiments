@@ -22,14 +22,15 @@ async function loadTitleLOV() {
     select.appendChild(option);
   });
 }
-console.log("Hello hello hello");
-  loadTitleLOV();
+
+document.getElementById("title").addEventListener("click", loadTitleLOV);
 /*
 window.onload = () => {
   console.log("Hello hello hello");
   loadTitleLOV();
 };
 */
+
 
 document.getElementById("bookmarkForm").addEventListener("submit", async (e) => {
   e.preventDefault();
