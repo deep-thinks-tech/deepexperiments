@@ -26,7 +26,10 @@ if(savedWords){
 
 let i = 0;
 
-  function newQ(){
+  async function newQ(){
+    if (word.length == 0){
+      await fetchData();
+    }
     randomNoGen();
     document.getElementById("q").innerHTML = meaning[i];
     document.getElementById("out").innerHTML = "";
@@ -112,25 +115,11 @@ async function writeData(){
   await response.text();
   document.getElementById("outword").innerHTML = "Word added to the vocabulary with meaning";
   document.getElementById("wordform").reset();
-}
-
+} 
 
   //Sync function - Identify the local storage data missing from the arrays - word and meaning
-  async function sync (){
-    /*
-    savedWords = JSON.parse(localStorage.getItem(storageKey1));
-    savedMeanings = JSON.parse(localStorage.getItem(storageKey2));
-    if(savedWords != null){
-        let missingWords = [];
-        for (let w = 0; w<savedWords.length; w++){
-          let missingWord = " " +savedWords[w] + " : " + savedMeanings[w];
-          missingWords.push(missingWord);
-        }
-        document.getElementById('syncresult').innerHTML = missingWords;
-    }else{
-      document.getElementById('syncresult').innerHTML = "Main Array is Up-to-date."
-    }
-    */
+  async function fetchData(){
+    
 
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL); // GET by default
@@ -145,7 +134,6 @@ async function writeData(){
             word.push(dataArr[j][0]);
             meaning.push(dataArr[j][1]);
           }
-          alert("Data Refreshed.");
         } else {
           alert("Error fetching data: " + data.message);
         }
@@ -185,13 +173,16 @@ async function writeData(){
 }
 
   //Function to capture the selected alphabet and create relevant dictionary
-  function alphabet(){
+  async function alphabet(){
     let alpha = document.getElementById('letter').value;
-
+    document.getElementById("wordselect").innerHTML = "";
     //Replace the updated word and meaning array with the original arrays
-    word = origword;
-    meaning = origmeaning;
-
+    //word = origword;
+    //meaning = origmeaning;
+      await fetchData();
+   
+    
+    
     //create an array of words and their meanings for the words that starts with the letter selected
     let alphaArray = [];
     sortedWordArr = [];
@@ -213,7 +204,7 @@ async function writeData(){
     //For using in the dictionary and in word guessor, split the key-value pairs in the alphaArray into two arrays.
     alphaArray.map(a => {
       let wm = a.split(" : ");
-      sortedWordArr.  push(wm[0]);
+      sortedWordArr.push(wm[0]);
       sortedMeaningArr.push(wm[1]);
     });
     document.getElementById("wordselect").innerHTML =
