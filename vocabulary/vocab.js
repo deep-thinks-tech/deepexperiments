@@ -1,28 +1,29 @@
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsC3BTICF92Kh_AkuPWznEsvlsQdFH9-6ZLO4l_6LQz_e1mwisEOHQiP6cJpce14ZJEQ/exec"; // Replace with your Apps Script Web App URL
 
-const storageKey1 = "myStoredWords"; // Custom name for localStorage key
-const storageKey2 = "myStoredMeanings";
+//const storageKey1 = "myStoredWords"; // Custom name for localStorage key
+//const storageKey2 = "myStoredMeanings";
 
 let word = [];
 let meaning = [];
 
 let eng_alphabets = ['All','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I','J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-let savedWords = JSON.parse(localStorage.getItem(storageKey1));
-let savedMeanings = JSON.parse(localStorage.getItem(storageKey2));
+//let savedWords = JSON.parse(localStorage.getItem(storageKey1));
+//let savedMeanings = JSON.parse(localStorage.getItem(storageKey2));
 let wordArray = [];
 let meaningArray = []; 
 let combinedwordArray = []; 
 let sortedWordArr = [];
 let sortedMeaningArr = [];
 //temp storage for original word and meaning array
-let origword = word;
-let origmeaning = meaning;
-
+let origword = [];
+let origmeaning = [];
+/*
 if(savedWords){
     wordArray = savedWords;
     meaningArray = savedMeanings;
 }
+*/
 
 let i = 0;
 
@@ -145,6 +146,7 @@ async function writeData(){
   }
 
   //Clear function -  cleans up the local storage
+  /*
   function clearData(){
     savedWords = JSON.parse(localStorage.getItem(storageKey1));
     if (savedWords){
@@ -165,6 +167,7 @@ async function writeData(){
     }
  
   }
+  */
 
   if (document.getElementById("letter")){
   //Populate the alphabet LOV with alphabets
@@ -177,9 +180,13 @@ async function writeData(){
     let alpha = document.getElementById('letter').value;
     document.getElementById("wordselect").innerHTML = "";
     //Replace the updated word and meaning array with the original arrays
-    //word = origword;
-    //meaning = origmeaning;
+    if (origword.length == 0){
       await fetchData();
+      origword = word;
+      origmeaning = meaning;
+    }
+    word = origword;
+    meaning = origmeaning;
    
     
     
