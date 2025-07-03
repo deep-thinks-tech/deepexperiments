@@ -20,6 +20,5 @@ function timedilation(){
    lorentz_factor = 1/Math.sqrt(1-((v**2)/(c**2)))
 
     dilated_time = (t_0 * lorentz_factor);
-    document.getElementById('delta_t').innerHTML = Math.round(dilated_time,2);
-    console.log("Dilated Time =",dilated_time, " Rounded value ",Math.round(dilated_time,2));
+    document.getElementById('delta_t').value = dilated_time.toFixed(5); //use .value for input field types. use .innerHTML for p type fields
 }
