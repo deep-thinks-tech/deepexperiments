@@ -11,6 +11,7 @@ c = velocity of light = 300000 km/sec
 document.getElementById('enterbtn').addEventListener('click', wrapper);
 
 function wrapper(){
+    document.getElementById("tooltip").innerHTML = ""
     delta_t = document.getElementById('delta_t').value; //Dilated Time: Time For The Light From Distant Object to Reach Earth (Years)
     units = document.getElementById('transtype').value; //light years for now
     t_0 = document.getElementById('t_0').value; //Years
@@ -29,6 +30,9 @@ function wrapper(){
             break;
         default:
             v = traveller_speed;
+    }
+    if(v > c){
+        document.getElementById("tooltip").innerHTML = "Warning! Speed of any object can't exceed speed of light!"
     }
     
     if (delta_t == "")  {
