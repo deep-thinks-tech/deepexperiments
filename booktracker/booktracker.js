@@ -45,7 +45,6 @@ async function fetchData(){
         authorbooks.push(dataArr[k]);
       }
     }
-    console.log(authorbooks);
     document.getElementById('totalbooks').innerHTML = "Total Books Read: "+`<b>`+authorbooks.length;
     displayData(authorbooks);
 
