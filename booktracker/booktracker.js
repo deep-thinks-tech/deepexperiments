@@ -46,6 +46,7 @@ async function fetchData(){
       }
     }
     document.getElementById('totalbooks').innerHTML = "Total Books Read: "+`<b>`+authorbooks.length;
+    authorbooks.sort((a,b)=>a[2].localeCompare(b[2]));
     displayData(authorbooks);
 
   }
