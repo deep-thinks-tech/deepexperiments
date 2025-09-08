@@ -3,6 +3,7 @@ let author = [];
 
 let totalBooks, totalBooksByAuthor = 0;
 let dataArr;
+let authorbooks = [];
 async function fetchData(){
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL); // GET by default
@@ -38,8 +39,8 @@ async function fetchData(){
   }
 
   function getBooks(){
+    authorbooks = [];
     let selectAuthor = document.getElementById('author').value;
-    let authorbooks = [];
     for (let k = 6; k< dataArr.length; k++){
       if (dataArr[k][3] == selectAuthor){
         authorbooks.push(dataArr[k]);
@@ -52,10 +53,37 @@ async function fetchData(){
   }
 
   function displayData(rows) {
-    let html = "<table class='table table-bordered table-striped'><tr><th>Title</th><th>Rating</th><th>Year Read</th><th>Genre</th><th>Format</th></tr>";
+    let html = "<input type='text' id='searchInput' class= 'form-control' onkeyup = 'searchFun()'    placeholder='Search by Title...'><br> <table id = 'books-read' class='table table-bordered table-striped'><tr><th>Title</th><th>Rating</th><th>Year Read</th><th>Genre</th><th>Format</th></tr>";
     for (let i = 0; i < rows.length; i++) {
       html += `<tr><td>${rows[i][2]}</td><td>${rows[i][7]}</td><td>${rows[i][0]}</td><td>${rows[i][4]}</td><td>${rows[i][5]}</td></tr>`;
     }
     html += "</table>";
     document.getElementById("dataDisplay").innerHTML = html;
+  }
+
+  function searchFun(){
+      const searchInput = document.getElementById('searchInput');
+      const searchTerm = searchInput.value.toLowerCase();
+      const tableID = document.getElementById('books-read');
+      const rows = tableID.getElementsByTagName('tr');
+      // Start from index 1 to skip the table header row
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        let rowMatches = false;
+        const cells = row.getElementsByTagName('td');
+
+        for (let j = 0; j < cells.length; j++) {
+          const cellText = cells[j].textContent.toLowerCase();
+          if (cellText.includes(searchTerm)) {
+            rowMatches = true;
+            break; // No need to check other cells in this row
+          }
+        }
+
+        if (rowMatches) {
+          row.style.display = ''; // Show the row
+        } else {
+          row.style.display = 'none'; // Hide the row
+        }
+      }
   }
