@@ -1,0 +1,30 @@
+body {
+    background: rebeccapurple;
+  }
+  .circle {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    border-radius: 200px;
+    overflow: hidden;
+  }
+
+  .wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(90deg,rgba(105, 203, 255, 1) 0%, rgba(56, 185, 255, 1) 25%, rgba(105, 203, 255, 1) 50%, rgba(56, 185, 255, 1) 75%, rgba(105, 203, 255, 1) 100%);
+    --mask:
+    radial-gradient(51.61px at 50% 72px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(51.61px at 50% -42px,#0000 99%,#000 101%) 50% 30px/120px 100% repeat-x;
+  mask: var(--mask);  
+  }
+  .uno {
+    bottom: 100px;
+  }
+
+  tres {
+    bottom: 0;
+  }
