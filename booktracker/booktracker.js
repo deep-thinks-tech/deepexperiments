@@ -1,4 +1,5 @@
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbydnH05YVkmA6rbQ6JNpprWNvpX8jsMwG5UCVz86O0q9CEC65h4Oz9-pkwPEk3qzR0l/exec"; // Replace with your Apps Script Web App URL
+//const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbydnH05YVkmA6rbQ6JNpprWNvpX8jsMwG5UCVz86O0q9CEC65h4Oz9-pkwPEk3qzR0l/exec"; // Replace with your Apps Script Web App URL
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyw8UsP-Yar0mobPLJd5AJ9bJuEk0o7lcUEz-jlOHEJRzqM1HWef9RyZu-twt_Yvb2X/exec"
 let author = [];
 
 let totalBooks, totalBooksByAuthor = 0;
@@ -55,7 +56,7 @@ async function fetchData(){
   function displayData(rows) {
     let html = "<input type='text' id='searchInput' class= 'form-control' onkeyup = 'searchFun()'    placeholder='Search by Title...'><br> <table id = 'books-read' class='table table-bordered table-striped'><tr><th>Title</th><th>Rating</th><th>Year Read</th><th>Genre</th><th>Format</th></tr>";
     for (let i = 0; i < rows.length; i++) {
-      html += `<tr><td>${rows[i][2]}</td><td>${rows[i][7]}</td><td>${rows[i][0]}</td><td>${rows[i][4]}</td><td>${rows[i][5]}</td></tr>`;
+      html += `<tr><td>${rows[i][2]}</td><td>${rows[i][6]}</td><td>${rows[i][0]}</td><td>${rows[i][4]}</td><td>${rows[i][5]}</td></tr>`;
     }
     html += "</table>";
     document.getElementById("dataDisplay").innerHTML = html;
@@ -87,3 +88,43 @@ async function fetchData(){
         }
       }
   }
+
+//New function added to add books from frontend
+  async function writeGoogleSheet() {
+    document.getElementById("outmsg").innerHTML = "Waiting...";
+    const year = document.getElementById('year').value;
+    const title = document.getElementById('title').value;
+    let existingauthor = document.getElementById('author').value;
+    let newauthor = document.getElementById('newauthor').value;
+    const genre = document.getElementById('genre').value;
+    const format = document.getElementById('format').value;
+    const rating = document.getElementById('rating').value;
+    let author;
+    
+    //Check if the author is existing or new
+    console.log(existingauthor);
+    if (existingauthor == "Choose..."){
+        author = newauthor;
+    } else {
+        author = existingauthor;
+    }
+
+    const data = {
+        Year: year,
+        SiNo: "",
+        Title: title,
+        Author: author,
+        Genre: genre,
+        Format: format,
+        Rating: rating
+    };
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+        mode: "no-cors"  // ✅ Fixes CORS issue
+    });
+    await response.text();
+
+    document.getElementById("outmsg").innerHTML = "Data Saved Successfully";
+}
