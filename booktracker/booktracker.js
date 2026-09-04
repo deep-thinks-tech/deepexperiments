@@ -102,7 +102,6 @@ async function fetchData(){
     let author;
     
     //Check if the author is existing or new
-    console.log(existingauthor);
     if (existingauthor == "Choose..."){
         author = newauthor;
     } else {
@@ -127,4 +126,5 @@ async function fetchData(){
     await response.text();
 
     document.getElementById("outmsg").innerHTML = "Data Saved Successfully";
+    document.getElementById("AddBookForm").reset();
 }
